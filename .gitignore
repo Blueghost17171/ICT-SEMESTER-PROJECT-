@@ -1,0 +1,19 @@
+# Build files
+build/
+cmake-build-debug/
+cmake-build-release/
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# IDE clutter
+*.code-workspace
+*.vcxproj
+*.sln
+*.idea/
+.vscode/
+
+# SFML binaries
+*.dll
+*.so
