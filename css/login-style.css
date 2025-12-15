@@ -1,43 +1,22 @@
-/* --- VARIABLES (Matching Home Page) --- */
-:root {
-    --bg-dark: #0a0a0f;
-    --panel-dark: #13131f;
-    --neon-blue: #00f3ff;
-    --neon-red: #ff0055;
-    --text-main: #ffffff;
-    --text-muted: #b0b0b0;
-}
-
-/* --- PAGE SETUP --- */
 body {
     margin: 0;
-    font-family: 'Roboto', sans-serif;
+    font-family: Arial, sans-serif;
     height: 100vh;
-    /* Dark Tech Background */
-    background-color: var(--bg-dark);
-    background-image: 
-        radial-gradient(circle at 10% 20%, rgba(0, 243, 255, 0.1) 0%, transparent 20%),
-        radial-gradient(circle at 90% 80%, rgba(255, 0, 85, 0.1) 0%, transparent 20%);
+    background-color: #222;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: var(--text-main);
 }
 
-/* --- LOGIN CONTAINER --- */
 .login-box {
-    width: 850px;
-    max-width: 90%;
-    background-color: var(--panel-dark);
+    width: 800px;
+    background-color: #333;
     display: flex;
-    border-radius: 15px;
-    /* Neon Border Glow */
-    border: 1px solid #333;
-    box-shadow: 0 0 30px rgba(0, 243, 255, 0.15);
-    overflow: hidden; /* Keeps images inside rounded corners */
+    border-radius: 8px;
+    border: 1px solid #444;
+    overflow: hidden;
 }
 
-/* --- LEFT SIDE (FORM) --- */
 .left {
     width: 50%;
     padding: 40px;
@@ -47,66 +26,50 @@ body {
 }
 
 .left h2 {
-    font-family: 'Orbitron', sans-serif;
-    color: var(--neon-blue);
-    margin-bottom: 25px;
+    color: #fff;
+    margin-bottom: 20px;
     text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    text-shadow: 0 0 10px rgba(0, 243, 255, 0.5);
 }
 
 .field-title {
-    color: var(--text-muted);
+    color: #ccc;
     margin: 15px 0 5px;
-    font-size: 0.9rem;
-    font-weight: bold;
+    font-size: 14px;
 }
 
-/* --- INPUT FIELDS --- */
 .left input {
     width: 100%;
-    padding: 12px;
-    border-radius: 5px;
-    border: 1px solid #333;
-    background-color: var(--bg-dark); /* Dark input background */
-    color: var(--text-main);
-    outline: none;
-    transition: 0.3s ease;
-    font-family: 'Roboto', sans-serif;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: 1px solid #555;
+    background-color: #222;
+    color: #fff;
+    box-sizing: border-box;
 }
 
-/* Input Focus Effect (Glowing Red) */
 .left input:focus {
-    border-color: var(--neon-red);
-    box-shadow: 0 0 10px rgba(255, 0, 85, 0.3);
+    border-color: #3498db;
+    outline: none;
 }
 
-/* --- SUBMIT BUTTON --- */
 .submit-btn {
     width: 100%;
     padding: 12px;
-    margin-top: 25px;
+    margin-top: 20px;
     cursor: pointer;
     border: none;
-    border-radius: 5px;
-    background: var(--neon-red); /* Gamer Red Button */
+    border-radius: 4px;
+    background-color: #3498db;
     color: white;
-    font-family: 'Orbitron', sans-serif;
+    font-size: 16px;
     font-weight: bold;
-    letter-spacing: 1px;
-    transition: 0.3s;
-    text-transform: uppercase;
 }
 
 .submit-btn:hover {
-    background: white;
-    color: var(--neon-red);
-    box-shadow: 0 0 15px var(--neon-red);
-    transform: translateY(-2px);
+    background-color: #2980b9;
 }
 
-/* --- RIGHT SIDE (IMAGES) --- */
 .right {
     width: 50%;
     background-color: #000;
@@ -116,34 +79,23 @@ body {
 
 .right img {
     width: 100%;
-    height: 50%; /* Each image takes half height */
+    height: 50%;
     object-fit: cover;
     opacity: 0.8;
-    transition: 0.3s;
-    border-left: 2px solid var(--neon-blue); /* Divider line */
 }
 
-.right img:hover {
-    opacity: 1; /* Brighten on hover */
-    filter: contrast(110%);
-}
-
-/* --- BOTTOM LINKS --- */
 .bottom-text {
     text-align: center;
-    color: var(--text-muted);
-    margin-top: 20px;
-    font-size: 0.9rem;
+    color: #aaa;
+    margin-top: 15px;
+    font-size: 14px;
 }
 
 .bottom-text a {
-    color: var(--neon-blue);
+    color: #3498db;
     text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s;
 }
 
 .bottom-text a:hover {
-    color: var(--neon-red);
-    text-shadow: 0 0 8px var(--neon-red);
+    text-decoration: underline;
 }
