@@ -1,7 +1,8 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    height: 100vh;
+     height: 100vh;   
+     /*vh = view height, 100 view height = full height of the screen */
     background-color: #222;
     display: flex;
     justify-content: center;
@@ -15,11 +16,14 @@ body {
     border-radius: 8px;
     border: 1px solid #444;
     overflow: hidden;
+    /* overflow hidden = anything that exceeds the size of the box will be hidden */
 }
 
 .left {
-    width: 50%;
+    width: 50%; 
+    /* take 50% of the login box width */
     padding: 40px;
+    /* space inside the box */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -81,6 +85,7 @@ body {
     width: 100%;
     height: 50%;
     object-fit: cover;
+    /* smart crop.. fits the image nicely */
     opacity: 0.8;
 }
 
