@@ -1,67 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" href="assets/images/favicon.png" type="image/png">
     <meta charset="UTF-8">
-    <title>PC Builder & Compatibility Checker</title>
-    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Orbitron:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+        header
+        {
+        background-image:linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("https://wallpapercave.com/wp/wp11876447.jpg");
+        
+        height: 450px;
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        }
+        
+        nav
+        {
+        text-align: center;
+        background: rgba(255, 255, 255, 0.1);
+        text-decoration: none;
+        overflow: hidden;
+        padding: 10px 0;
+        margin: auto;
+        }
+    nav a
+    {
+        color: white;
+        text-decoration: none;
+        padding: 15px 20px;
+        text-align: center;
+        margin: 5px 5px;
+        justify-content: center;
+    }
+    nav a:hover
+    {
+        background-color: #68089b;
+        color: white;
+    }
+    body
+    {
+        background-color: blue;
+        background: linear-gradient(to right, rgb(44, 4, 46), rgb(11, 4, 76));
+        margin: 0px;
+    }
+    header h1
+    {
+        padding-top: 25px;
+        color: white;
+        text-align: center;
+    }
+    header p
+    {
+        color:white;
+        text-align: center;
+        font-size: 20px;
+        font-weight: bold;
+    }
+    </style>
 </head>
 <body>
-
-    <nav class="navbar">
-        <div class="logo">
-            <h2>PC Builder</h2>
-        </div>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="custom.html">Custom PCs</a></li>
-            <li><a href="prebuilt.html">Prebuilt PCs</a></li>
-            <li><a href="login.html">Login</a></li>
-        </ul>
+   
+    <header>
+        <h1>WELCOME TO PC BUILDER</h1>
+        <p>Your one-stop shop for custom and pre-built computers!</p>
+    </header>
+     <nav>
+        <a href="#">Home</a>
+        <a href="#">Pre-built Computers</a>
+        <a href="#">Custom Computers</a>
+        <a href="#">login</a>
     </nav>
-
-    <section class="hero">
-        <h1>Build Your Perfect PC</h1>
-        <p>
-            Our PC Builder Site helps users create custom PCs
-            by selecting compatible components. Whether you are a gamer, student,
-            or professional, we make PC building simple and reliable.
-        </p>
-    </section>
-
-    <section class="about-project">
-        <h2>What We Do</h2>
-        <p>
-            We allow users to choose computer components such as CPU, GPU,
-            motherboard, RAM, and storage. The system checks compatibility
-            between components and calculates the total cost.
-        </p>
-    </section>
-
-    <section class="features">
-        <h2>Our Features</h2>
-        <div class="feature-box">
-            <img src="assets/images/custom_pc.png" alt="Custom PC">
-            <h3>Custom PC Builder</h3>
-            <p>Select your own components and build a PC tailored to your needs.</p>
-        </div>
-
-        <div class="feature-box">
-            <img src="assets/images/prebuilt_pc.png" alt="Prebuilt PC">
-            <h3>Prebuilt PCs</h3>
-            <p>Choose from ready-made PC builds for gaming, office, or study.</p>
-        </div>
-
-        <div class="feature-box">
-            <img src="assets/images/compatibility.png" alt="Compatibility Checker">
-            <h3>Compatibility Check</h3>
-            <p>Ensure all selected components work together without conflicts.</p>
-        </div>
-    </section>
-
-    <footer>
-        <p>Developed by Ahsan, Hassan & Fahad | ICT Project</p>
-    </footer>
-
 </body>
 </html>
