@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
+    <title>Velox Systems</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Orbitron:wght@700&display=swap" rel="stylesheet">
 
     <style>
         header
         {
-        background-image:linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("https://wallpapercave.com/wp/wp11876447.jpg");
+        background-image:linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("https://wallpapercave.com/wp/wp11876447.jpg");
         
         height: 450px;
         background-size: cover;
@@ -23,9 +23,11 @@
         
         nav
         {
+        backdrop-filter: blur(10px); /* Blurs background behind nav */
         text-align: center;
         background: rgba(255, 255, 255, 0.1);
         text-decoration: none;
+        position: sticky; /* Sticks to top when scrolling */
         overflow: hidden;
         padding: 10px 0;
         margin: auto;
@@ -46,9 +48,11 @@
     }
     body
     {
+        color: white;
         background-color: blue;
         background: linear-gradient(to right, rgb(44, 4, 46), rgb(11, 4, 76));
         margin: 0px;
+        font-family: 'Montserrat', sans-serif;
     }
     header h1
     {
@@ -63,19 +67,130 @@
         font-size: 20px;
         font-weight: bold;
     }
+    h1, h2, h3, nav a, .btn {
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 2px;
+    text-transform: uppercase; /*Makes all headers uppercase */
+    }
+    .section-title {
+        text-align: center;
+        margin-top: 40px;
+        margin-bottom: 20px;
+    }
+    .content
+    {
+        color: white;
+        font-family: 'Montserrat', sans-serif;
+        padding: 20px;
+        text-align: center;
+    }
+    .intro-text
+    {
+        text-align: center;
+        max-width: 800px;
+        margin: auto;
+        font-size: 18px;
+        line-height: 1.6;
+    }
+     .container
+    {
+        padding: 20px;
+    }
+     footer
+    {
+        text-align: center;
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.1);
+        margin-top: 40px;
+    }
+    ul
+    {
+        list-style-type: none; /* Removes the bullet points */
+    }
+    .card-grid
+    {
+        margin-top: 20px;
+        display: flex;
+        justify-content:center;
+        gap: 20px;
+        flex-wrap: wrap;
+;
+    }
+    .card {
+        background: rgba(255, 255, 255, 0.05);      /* Glass effect */
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 15px;
+        width: 300px;
+        text-align: left;
+        overflow: hidden; /* make the image's corners rounded */
+    }
+    .card:hover {
+        transform: translateY(-10px);       /* Floats up on hover by 10 pixels */
+        background: rgba(255, 255, 255, 0.1);
+        border-color: #68089b;
+    }
+    .card-image {
+        width: 100%;
+        height: 200px;
+       object-fit: cover;
+    }
+    .card-text {
+        text-align: center;
+        padding: 15px;
+        color: white;
+    }
+    .card h3 {
+        color: #c586ff; /* Light purple color to the headings */
+        margin-top: 0;
+    }
     </style>
 </head>
 <body>
    
     <header>
-        <h1>WELCOME TO PC BUILDER</h1>
+        <h1>WELCOME TO VELOX</h1>
         <p>Your one-stop shop for custom and pre-built computers!</p>
     </header>
-     <nav>
-        <a href="#">Home</a>
-        <a href="#">Pre-built Computers</a>
-        <a href="#">Custom Computers</a>
-        <a href="#">login</a>
+    <nav>
+        <div class="brand-name">
+            <h1>VELOX</h1>
+        </div>
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">Pre-built PCs</a>
+            <a href="#">Custom PCs</a>
+            <a href="#">Login</a>
+        </div>
     </nav>
+      <div class="container">
+        <h2 class="section-title">Why Choose Us?</h2>
+        <p class="intro-text">
+            We don't just assemble parts. We craft machines designed for domination. 
+            From cable management to thermal paste application, every detail is handled by experts.
+        </p>
+
+        <div class="card-grid">
+            
+            <div class="card">
+                <img src="/assets/images/prebuilt_pc.png" alt="Prebuilt PC" class="card-image">
+                <div class="card-text">
+                    <h3>Pre-Built PCs</h3>
+                    <p>Don't want to wait? Grab a system that is tested, benchmarked, and ready to ship within 24 hours.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="/assets/images/custom_pc.png" alt="Custom PC" class="card-image">
+                <div class="card-text">
+                    <h3>Custom PCs</h3>
+                    <p>You pick the parts, we build the beast. Choose from thousands of components to create your dream rig.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        &copy; 2025 WEBSITE NAME. All Rights Reserved. <br>
+        Designed for Gamers.
+    </footer>
 </body>
 </html>
