@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" href="assets/images/favicon.png" type="image/png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon.png">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login Page</title>
@@ -124,14 +124,14 @@
                 <h2>Login</h2>
 
                 <p class="field-title">Email:</p>
-                <input type="text" placeholder="abc123@gmail.com">
+                <input type="text" id="emailInput" placeholder="abc123@gmail.com">
 
                 <p class="field-title">Password:</p>
-                <input type="password" placeholder="Abc@123">
+                <input type="password" id="passwordInput" placeholder="Abc@123">
 
-                <a href="index.html">
-                <button class="submit-btn">Login</button>
-                </a>
+                
+                <button class="submit-btn" onclick="handleLogin()">Login</button>
+                
             </div>
 
             <div class="right">
@@ -144,6 +144,22 @@
             Don't have an account? <a href="signup.html">Sign Up</a>
         </p>
     </div>
-
-</body>
+<script>
+function handleLogin()
+{
+    let email = document.getElementById("emailInput").value;
+    let password = document.getElementById("passwordInput").value;
+                //Simple check to make sure fields aren't empty
+    if (email === "" || password === "")
+     {
+        alert("Please fill in both Email and Password fields.");
+    }
+     else 
+    {
+        //If filled, redirect to index.html
+        window.location.href = "index.html";
+    }   
+}
+</script>
+    </body>
 </html>

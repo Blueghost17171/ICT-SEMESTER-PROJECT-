@@ -5,7 +5,114 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sign Up - PC Builder</title>
-    <link rel="stylesheet" href="css/login-style.css">
+    <style>
+        /* --- INTERNAL CSS START --- */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            background-color: #222;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-box {
+            width: 800px;
+            background-color: #333;
+            display: flex;
+            border-radius: 8px;
+            border: 1px solid #444;
+            overflow: hidden;
+            /* This ensures the box grows if the content (like extra inputs) gets taller */
+            min-height: 450px; 
+        }
+
+        .left {
+            width: 50%;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .left h2 {
+            color: #fff;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .field-title {
+            color: #ccc;
+            margin: 10px 0 5px; /* Reduced top margin slightly so it fits better */
+            font-size: 14px;
+        }
+
+        .left input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 5px; /* Reduced bottom margin slightly */
+            border-radius: 4px;
+            border: 1px solid #555;
+            background-color: #222;
+            color: #fff;
+            box-sizing: border-box;
+        }
+
+        .left input:focus {
+            border-color: #3498db;
+            outline: none;
+        }
+
+        .submit-btn {
+            width: 50%; /* Made slightly wider */
+            padding: 12px;
+            margin: 20px auto 0 auto; /* Auto margins center the button */
+            display: block;
+            cursor: pointer;
+            border: none;
+            border-radius: 4px;
+            background-color: #3498db;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .submit-btn:hover {
+            background-color: #2980b9;
+        }
+
+        .right {
+            width: 50%;
+            background-color: #000;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .right img {
+            width: 100%;
+            height: 50%;
+            object-fit: cover;
+            opacity: 0.8;
+        }
+
+        .bottom-text {
+            text-align: center;
+            color: #aaa;
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        .bottom-text a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        .bottom-text a:hover {
+            text-decoration: underline;
+        }
+        /* --- INTERNAL CSS END --- */
+    </style>
 </head>
 
 <body>
@@ -17,15 +124,16 @@
                 <h2>Create Account</h2>
 
                 <p class="field-title">Full Name:</p>
-                <input type="text" placeholder="Zubair Fahad">
+                <input type="text" id="fullNameInput" placeholder="Zubair Fahad">
 
                 <p class="field-title">Email:</p>
-                <input type="email" placeholder="abc1234@gmail.com">
+                <input type="text" id="emailInput" placeholder="abc123@gmail.com">
 
                 <p class="field-title">Password:</p>
-                <input type="password" placeholder="Create a strong password">
+                <input type="password" id="passwordInput" placeholder="Abc@123">
 
-                <button class="submit-btn">Sign Up</button>
+
+                <button class="submit-btn" onclick="handleSignup()">Sign Up</button>
             </div>
 
             <div class="right">
@@ -38,6 +146,24 @@
             Already have an account? <a href="login.html">Login here</a>
         </p>
     </div>
+<script>
+function handleSignup()
+{
+    let fullName = document.getElementById('fullNameInput').value;
+    let email = document.getElementById('emailInput').value;
+    let password = document.getElementById('passwordInput').value;
 
+    // Simple validation (can be expanded as needed)
+      if (email === "" || password === "" || fullName === "")
+     {
+        alert("Please fill in both Email and Password fields.");
+    }
+     else 
+    {
+        //If filled, redirect to index.html
+        window.location.href = "index.html";
+    }   
+}
+</script>
 </body>
 </html>
