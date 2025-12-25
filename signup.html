@@ -6,6 +6,114 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sign Up - PC Builder</title>
     <link rel="stylesheet" href="css/login-style.css">
+    <style>
+        body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+     height: 100vh;   
+     /*vh = view height, 100 view height = full height of the screen */
+    background-color: #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-box {
+    width: 800px;
+    background-color: #333;
+    display: flex;
+    border-radius: 8px;
+    border: 1px solid #444;
+    overflow: hidden;
+    /* overflow hidden = anything that exceeds the size of the box will be hidden */
+}
+
+.left {
+    width: 50%; 
+    /* take 50% of the login box width */
+    padding: 40px;
+    /* space inside the box */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.left h2 {
+    color: #fff;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.field-title {
+    color: #ccc;
+    margin: 15px 0 5px;
+    font-size: 14px;
+}
+
+.left input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: 1px solid #555;
+    background-color: #222;
+    color: #fff;
+    box-sizing: border-box;
+}
+
+.left input:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+.submit-btn {
+    width: 45%;
+    padding: 12px;
+    margin: 10px 95px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    background-color: #3498db;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.submit-btn:hover {
+    background-color: #2980b9;
+}
+
+.right {
+    width: 50%;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+}
+
+.right img {
+    width: 100%;
+    height: 50%;
+    object-fit: cover;
+    /* smart crop.. fits the image nicely */
+    opacity: 0.8;
+}
+
+.bottom-text {
+    text-align: center;
+    color: #aaa;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.bottom-text a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+.bottom-text a:hover {
+    text-decoration: underline;
+}
+    </style>
 </head>
 
 <body>
