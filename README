@@ -1,63 +1,26 @@
+A simple and responsive PC Store website built using HTML, CSS, and JavaScript.
+This project showcases PC components, allows users to browse products, and proceed to a checkout page.
 
-# Minesweeper Game (BSCS Semester 1 Project)
+Features
 
-This project is a simple implementation of the classic **Minesweeper** game.
-It is being developed as our **1st semester BSCS project**, using **C++** and **SFML** for graphics.
+Clean and modern UI
 
-## Features (Planned)
+Product listing for PC components
 
-* Classic Minesweeper grid
-* Left-click to reveal cells
-* Right-click to place flags
-* Timer and mine counter
-* Simple UI using SFML
-* Win/Lose system
+“Buy Now” button redirects to checkout page
 
-## Tech Stack
+Responsive layout for different screen sizes
 
-* **Language:** C++
-* **Graphics Library:** SFML
-* **IDE (optional):** VS Code / Visual Studio
+Easy to customize and extend
 
-## How to Run (Will be added later)
+Technologies Used
 
-This section will be updated once the project structure is ready.
+HTML5 – Structure of the website
 
-Expected steps:
+CSS3 – Styling and layout
 
-1. Install SFML
-2. Clone this repository
-3. Build and run the project (using CMake or IDE build tools)
+JavaScript – Basic interactivity
 
-## Project Structure (Will grow over time)
+License
 
-```
-/src
-    main.cpp
-    game/
-        board.cpp
-        board.hpp
-        cell.cpp
-        cell.hpp
-assets/
-README.md
-```
-
-## Contributing
-
-1. Create a new branch for each feature
-2. Commit regularly with clear, meaningful messages
-3. Submit pull requests before merging
-4. Don’t push broken code to main
-
-## Team Members
-
-* **Ahsan Hayat**
-* **Hassan Farooq**
-* **Fahad Zubair**
-
-## License
-
-For academic use only.
-
----
+This project is open for educational use and personal learning.
