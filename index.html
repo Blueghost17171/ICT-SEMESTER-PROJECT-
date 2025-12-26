@@ -152,6 +152,9 @@
             height: 200px;
         object-fit: cover;
         }
+        .card a{
+            text-decoration: none;
+        }
         .card-text {
             text-align: center;
             padding: 15px;
@@ -175,9 +178,9 @@
         </div>
         <div class="nav-links">
             <a href="#">Home</a>
-            <a href="#">Pre-built PCs</a>
-            <a href="#">Custom PCs</a>
-            <a href="#">Login</a>
+            <a href="prebuilt.html">Pre-built PCs</a>
+            <a href="custom.html">Custom PCs</a>
+            <a href="login.html">Login</a>
         </div>
     </nav>
       <div class="container">
@@ -190,19 +193,23 @@
         <div class="card-grid">
             
             <div class="card">
-                <img src="/assets/images/prebuilt_pc.png" alt="Prebuilt PC" class="card-image">
+                <a href="prebuilt.html">
+                <img src="https://ict-semester-project.vercel.app/assets/images/prebuilt_pc.png" alt="Prebuilt PC" class="card-image">
                 <div class="card-text">
                     <h3>Pre-Built PCs</h3>
                     <p>Don't want to wait? Grab a system that is tested, benchmarked, and ready to ship within 24 hours.</p>
                 </div>
+                </a>
             </div>
 
             <div class="card">
-                <img src="/assets/images/custom_pc.png" alt="Custom PC" class="card-image">
+                <a href="custom.html">
+                <img src="https://ict-semester-project.vercel.app/assets/images/custom_pc.png" alt="Custom PC" class="card-image">
                 <div class="card-text">
                     <h3>Custom PCs</h3>
                     <p>You pick the parts, we build the beast. Choose from thousands of components to create your dream rig.</p>
                 </div>
+                </a>
             </div>
         </div>
     </div>
