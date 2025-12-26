@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon.png">
+    <title>Velox Systems</title>
+    <style>
+         body
+        {
+            color: white;
+            background-color: rgb(33, 33, 35);
+            margin: 0px;
+            font-family: 'Montserrat', sans-serif;
+        }
+         nav
+        {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        backdrop-filter: blur(10px); /* Blurs background behind nav */
+        text-align: center;
+        background: rgba(255, 255, 255, 0.1);
+        text-decoration: none;
+        overflow: hidden;
+        padding: 10px 0;
+        margin: 0px;
+        }
+         .brand-name h1 {
+            color: white;
+            margin: 0px 50px;
+            font-size: 2rem; /* Larger logo size */
+            font-weight: 900; /* Extra Thick */
+            font-style: italic; /* Slanted for speed (Velox means Speed) */
+            letter-spacing: 1px;
+            cursor: pointer;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3); /* Subtle shine */
+        }
+        .nav-links
+        {
+            display: flex;
+            gap: 10px;
+            margin: 0px 20px;
+        }
+        .nav-links a 
+        {
+            color: #cccccc; 
+            text-decoration: none;
+            padding: 10px 15px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            transition: 0.3s;
+        }
+        .nav-links a:hover {
+            color: #8800ff;
+        }
+        .main-header {   
+            text-align: center;
+            margin-bottom: 20px;
+            margin-top: 30px;
+            color: rgb(255, 255, 255);
+            font-size: 2em;
+            font-weight: bold;
+        }
+        .builder-container {
+            color: rgb(255, 255, 255);
+            text-align: center;
+            padding: 30px;
+            margin: auto;
+        }
+        .builder-container h1 {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            color: rgb(255, 255, 255);
+        }
+        .component-group {
+            margin: 15px 0;
+            text-align: left;
+            display: flex;
+            gap: 10px;
+            border: solid #444 1px;
+            padding: 10px;
+            border-radius: 8px;
+        }
+        .component-group label {
+            width: 200px;
+            font-weight: bold;
+            line-height: 32px;
+            display: flex;
+            justify-content: space-around;
+        }
+        .component-select {
+            width: 300px;     
+            padding: 8px;
+            border-radius: 4px;
+            border: none;
+        }
+        .total-section {
+            margin-top: 30px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .total-price {
+            color: #00ff00;
+            margin-left: 10px;
+        }
+        .order-btn {
+            margin-top: 20px;
+            padding: 12px 30px;
+            font-size: 18px;
+            background-color: #00aa00;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        .order-btn:hover {
+            background-color: #008800;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+     <nav>
+        <div class="brand-name">
+            <h1>VELOX</h1>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="prebuilt.html">Pre-built PCs</a>
+            <a href="custom.html">Custom PCs</a>
+            <a href="login.html">Login</a>
+        </div>
+    </nav>
+    <div class="main-header">
+        Build Your Custom PC
+    </div>
+    <div class="builder-container">
+
+        <div class="component-group">
+            <label>Processor (CPU)</label>
+            <select class="component-select" onchange="calculateTotal()">
+                <option value="0">-- Select CPU --</option>
+                <option value="35000">Intel Core i5 12th Gen (Rs. 35,000)</option>
+                <option value="55000">Intel Core i7 12th Gen (Rs. 55,000)</option>
+                <option value="40000">AMD Ryzen 5 5600X (Rs. 40,000)</option>
+                <option value="60000">AMD Ryzen 7 5800X (Rs. 60,000)</option>
+            </select>
+        </div>
+
+        <div class="component-group">
+            <label>Graphics Card (GPU)</label>
+            <select class="component-select" onchange="calculateTotal()">
+                <option value="0">-- Select GPU --</option>
+                <option value="45000">NVIDIA GTX 1660 Super (Rs. 45,000)</option>
+                <option value="85000">NVIDIA RTX 3060 (Rs. 85,000)</option>
+                <option value="120000">NVIDIA RTX 4070 (Rs. 120,000)</option>
+                <option value="75000">AMD Radeon RX 6600 (Rs. 75,000)</option>
+            </select>
+        </div>
+
+        <div class="component-group">
+            <label>Memory (RAM)</label>
+            <select class="component-select" onchange="calculateTotal()">
+                <option value="0">-- Select RAM --</option>
+                <option value="8000">8GB DDR4 3200MHz (Rs. 8,000)</option>
+                <option value="15000">16GB DDR4 3200MHz (Rs. 15,000)</option>
+                <option value="28000">32GB DDR4 3600MHz (Rs. 28,000)</option>
+                <option value="22000">16GB DDR5 5200MHz (Rs. 22,000)</option>
+            </select>
+        </div>
+
+        <div class="component-group">
+            <label>Storage</label>
+            <select class="component-select" onchange="calculateTotal()">
+                <option value="0">-- Select Storage --</option>
+                <option value="6000">256GB NVMe SSD (Rs. 6,000)</option>
+                <option value="10000">512GB NVMe SSD (Rs. 10,000)</option>
+                <option value="18000">1TB NVMe SSD (Rs. 18,000)</option>
+                <option value="4000">1TB HDD (Rs. 4,000)</option>
+            </select>
+        </div>
+
+        <div class="component-group">
+            <label>Power Supply (PSU)</label>
+            <select class="component-select" onchange="calculateTotal()">
+                <option value="0">-- Select PSU --</option>
+                <option value="8000">500W Bronze Rated (Rs. 8,000)</option>
+                <option value="12000">650W Gold Rated (Rs. 12,000)</option>
+                <option value="18000">750W Gold Modular (Rs. 18,000)</option>
+            </select>
+        </div>
+
+        <div class="component-group">
+            <label>PC Case</label>
+            <select class="component-select" onchange="calculateTotal()">
+                <option value="0">-- Select Case --</option>
+                <option value="5000">Standard Black Case (Rs. 5,000)</option>
+                <option value="12000">RGB Gaming Tower (Rs. 12,000)</option>
+                <option value="20000">Premium Glass Case (Rs. 20,000)</option>
+            </select>
+        </div>
+
+        <div class="total-section">
+            <span>Estimated Total:</span>
+            <span class="total-price" id="totalDisplay">Rs. 0</span>
+        </div>
+
+        <button class="order-btn" onclick="alert('Proceeding to Checkout...')">Buy Now</button>
+    </div>
+    <footer>
+        &copy; 2025 VELOX. All Rights Reserved. <br>
+    </footer>
+    <script>
+        function calculateTotal() {
+            const selects = document.querySelectorAll('.component-select');
+            let total = 0;
+            selects.forEach(select => {
+                total += parseInt(select.value);
+            });
+            document.getElementById('totalDisplay').innerText = 'Rs. ' + total;
+        }
+    </script>
+</body>
+</html>
