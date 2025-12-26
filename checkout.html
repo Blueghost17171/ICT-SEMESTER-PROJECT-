@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>PC Shop — Checkout</title>
+	<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Inter, system-ui, Arial, sans-serif;
+  background: linear-gradient(180deg, #05060a 0%, #0b0f14 100%);
+  color: #e9f1fb;
+  padding: 36px;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 1100px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+.lead {
+  color: #9aa4b2;
+  margin: 0;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 20px;
+}
+
+.card {
+  background: #0f1418;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 8px 24px rgba(2, 6, 23, 0.6);
+}
+
+form label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #e9f1fb;
+}
+
+.field {
+  margin-bottom: 14px;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  background: rgba(255, 255, 255, 0.02);
+  color: #e9f1fb;
+  font-size: 0.95rem;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid rgba(30, 144, 255, 0.12);
+  border-color: #1e90ff;
+}
+
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.section-title {
+  font-size: 0.95rem;
+  margin: 0 0 12px 0;
+}
+
+.summary .item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.04);
+}
+
+.total {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+  padding-top: 10px;
+}
+
+.submit-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 18px;
+}
+
+.btn {
+  background: #1e90ff;
+  color: #021222;
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: 0;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.btn:hover {
+  filter: brightness(0.95);
+}
+
+.summary .item:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.muted {
+  color: #9aa4b2;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 880px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .summary {
+    order: -1;
+  }
+}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="header">
+			<div>
+				<h1>Velox Shop — Checkout</h1>
+				<p class="lead">High-performance gaming rigs, built-to-order</p>
+			</div>
+			<div class="muted">Order #PC-00123</div>
+		</div>
+
+		<div class="layout">
+			<main class="card">
+				<form id="checkout-form" method="post" action="/order/submit">
+					<section aria-labelledby="shipping-heading">
+						<h2 id="shipping-heading" class="section-title">Shipping address</h2>
+
+						<div class="two-col">
+							<div class="field">
+								<label for="first-name">First name</label>
+								<input type="text" id="first-name" name="first_name" autocomplete="given-name">
+							</div>
+							<div class="field">
+								<label for="last-name">Last name</label>
+								<input type="text" id="last-name" name="last_name" autocomplete="family-name">
+							</div>
+						</div>
+
+						<div class="field">
+							<label for="email">Email</label>
+							<input type="text" id="email" name="email" autocomplete="email">
+						</div>
+
+						<div class="field">
+							<label for="address">Street address</label>
+							<input type="text" id="address" name="address" autocomplete="street-address">
+						</div>
+
+						<div class="two-col">
+							<div class="field">
+								<label for="city">City</label>
+								<input type="text" id="city" name="city" autocomplete="address-level2">
+							</div>
+							<div class="field">
+								<label for="state">State / Province</label>
+								<input type="text" id="state" name="state" autocomplete="address-level1">
+							</div>
+						</div>
+
+						<div class="two-col">
+							<div class="field">
+								<label for="postal">Postal code</label>
+								<input type="text" id="postal" name="postal_code" autocomplete="postal-code">
+							</div>
+							<div class="field">
+								<label for="country">Country</label>
+								<input type="text" id="country" name="country" autocomplete="country" placeholder="Country">
+							</div>
+						</div>
+					</section>
+
+					<hr style="margin:18px 0;border:0;border-top:1px solid rgba(255,255,255,0.03)">
+
+					<section aria-labelledby="payment-heading">
+						<h2 id="payment-heading" class="section-title">Payment</h2>
+						<p class="muted" style="margin-top:0">Card details</p>
+
+						<div class="field">
+							<label for="card-name">Name on card</label>
+							<input type="text" id="card-name" name="card_name" autocomplete="cc-name">
+						</div>
+
+						<div class="field">
+							<label for="card-number">Card number</label>
+							<input type="text" id="card-number" name="card_number" placeholder="4242 4242 4242 4242">
+						</div>
+
+						<div class="two-col">
+							<div class="field">
+								<label for="exp">Expiry (MM/YY)</label>
+								<input type="text" id="exp" name="card_expiry" placeholder="MM/YY">
+							</div>
+							<div class="field">
+								<label for="cvc">CVC</label>
+								<input type="text" id="cvc" name="card_cvc" placeholder="123">
+							</div>
+						</div>
+					</section>
+
+					<div class="submit-row">
+						<div class="muted">Client-side check</div>
+						<button type="submit" class="btn">Place order</button>
+					</div>
+				</form>
+			</main>
+
+			<aside class="card summary" aria-labelledby="summary-heading">
+				<h2 id="summary-heading" class="section-title">Order summary</h2>
+				<div class="item"><span>Gaming Desktop (RTX 4080)</span><span>$2,299.00</span></div>
+				<div class="item"><span>Mechanical Keyboard</span><span>$129.00</span></div>
+				<div class="item"><span>Shipping</span><span>$25.00</span></div>
+				<div class="total"><span>Total</span><span>$2,453.00</span></div>
+				<p class="muted" style="margin-top:12px">By placing this order you agree to our <a href="#">terms</a>.</p>
+			</aside>
+		</div>
+	</div>
+
+	<script>
+		(function(){
+			var form = document.getElementById('checkout-form');
+			if(!form) return;
+			form.addEventListener('submit', function(e){
+				var fields = form.querySelectorAll('input,select,textarea');
+				for(var i=0;i<fields.length;i++){
+					var f = fields[i];
+					if(f.type==='button' || f.type==='submit') continue;
+					if(!f.value || f.value.trim()===''){ e.preventDefault(); alert('Please fill all fields before submitting.'); f.focus(); return; }
+				}
+			});
+		})();
+	</script>
+</body>
+</html>
+
