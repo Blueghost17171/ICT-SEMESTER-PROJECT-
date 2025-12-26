@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon.png">
+     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Orbitron:wght@700&display=swap" rel="stylesheet">
     <title>Velox Systems</title>
     <style>
          body
@@ -27,15 +28,15 @@
         margin: 0px;
         }
          .brand-name h1 {
-            color: white;
+           color: white;
+            font-size: 2rem;
+            font-weight: 900;
             margin: 0px 50px;
-            font-size: 2rem; /* Larger logo size */
-            font-weight: 900; /* Extra Thick */
-            font-style: italic; /* Slanted for speed (Velox means Speed) */
-            letter-spacing: 1px;
+            font-style: italic;
             cursor: pointer;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3); /* Subtle shine */
-        }
+            /* SIMPLE GLOW EFFECT */
+            text-shadow: 0 0 10px #8800ff;
+         }
         .nav-links
         {
             display: flex;
@@ -54,7 +55,12 @@
         .nav-links a:hover {
             color: #8800ff;
         }
-        .main-header {   
+        h1, h2, h3, nav a, .btn {
+        font-family: 'Orbitron', sans-serif;
+        letter-spacing: 2px;
+        text-transform: uppercase; /* This forces the text to be UPPERCASE */
+        }
+        .main-header { 
             text-align: center;
             margin-bottom: 20px;
             margin-top: 30px;
@@ -63,10 +69,13 @@
             font-weight: bold;
         }
         .builder-container {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
             color: rgb(255, 255, 255);
             text-align: center;
             padding: 30px;
             margin: auto;
+            
         }
         .builder-container h1 {
             background: rgba(255, 255, 255, 0.1);
@@ -83,6 +92,7 @@
             border: solid #444 1px;
             padding: 10px;
             border-radius: 8px;
+            justify-content: space-between;
         }
         .component-group label {
             width: 200px;
