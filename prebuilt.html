@@ -4,13 +4,173 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pre-Built Gaming PCs</title>
+
     <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Orbitron:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+        /* ===== GLOBAL ===== */
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            background-color: rgb(33, 33, 35);
+            color: white;
+        }
+
+        h1, h2, nav a, button {
+            font-family: 'Orbitron', sans-serif;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        /* ===== NAVBAR ===== */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 40px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .logo h2 {
+            margin: 0;
+            color: white;
+            font-style: italic;
+            font-weight: 900;
+            cursor: pointer;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #cccccc;
+            padding: 10px 15px;
+            font-size: 0.85rem;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #8800ff;
+        }
+
+        /* ===== HEADER ===== */
+        .prebuilt-header {
+            height: 425px;
+            background-image: linear-gradient(
+                rgba(0,0,0,0.65),
+                rgba(0,0,0,0.65)
+            ), url("https://images.stockcake.com/public/0/c/5/0c5fce9d-dd5c-405f-81e8-2debdaf35616_large/gamer-s-night-setup-stockcake.jpg");
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .prebuilt-header h1 {
+            margin-bottom: 10px;
+        }
+
+        .prebuilt-header p {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        /* ===== PC GRID ===== */
+        .pc-container {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            padding: 40px 20px;
+        }
+
+        /* ===== PC CARD ===== */
+        .pc-card {
+            width: 300px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            overflow: hidden;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .pc-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.1);
+            border-color: #68089b;
+        }
+
+        .pc-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .pc-card h2 {
+            color: #8800ff;
+            margin: 15px 0;
+            font-size: 1.1rem;
+        }
+
+        .pc-card ul li {
+            margin: 8px 0;
+            font-size: 14px;
+        }
+
+        .price {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 15px 0;
+            color: #ffffff;
+        }
+
+        /* ===== BUTTON ===== */
+        button {
+            margin-bottom: 20px;
+            padding: 10px 25px;
+            border-radius: 30px;
+            border: none;
+            background: linear-gradient(135deg, #8800ff, #68089b);
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            box-shadow: 0 0 15px rgba(136, 0, 255, 0.7);
+            transform: scale(1.05);
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            margin-top: 40px;
+            font-size: 14px;
+        }
+    </style>
 </head>
+
 <body>
 
     <nav class="navbar">
         <div class="logo">
-            <h2>PC Builder</h2>
+            <h2>VELOX</h2>
         </div>
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
@@ -28,43 +188,82 @@
     <section class="pc-container">
 
         <div class="pc-card">
-            <img src="assets/images/lowend-1.jpg" alt="Budget Gaming PC">
-            <h2>Budget Gaming PC</h2>
-            <ul>
-                <li>CPU: Ryzen 5 3600</li>
-                <li>GPU: GTX 1660 Super</li>
-                <li>RAM: 16GB DDR4</li>
-                <li>Storage: 512GB NVMe SSD</li>
-            </ul>
-            <div class="price">PKR 185,000</div>
-            <button>Buy Now</button>
-        </div>
+    <img src="https://www.tesmart.com/cdn/shop/articles/20240522-175823.jpg?v=1716372544&width=1920" alt="Esports Gaming PC">
+    <h2>Esports Gaming PC</h2>
+    <ul>
+        <li>CPU: Intel i5 12400F</li>
+        <li>GPU: GTX 1650</li>
+        <li>RAM: 16GB DDR4</li>
+        <li>Storage: 512GB SSD</li>
+    </ul>
+    <div class="price">PKR 160,000</div>
+    <button>Buy Now</button>
+</div>
 
-        <div class="pc-card">
-            <img src="assets/images/midrange-pc1.jpg" alt="Mid Range Gaming PC">
-            <h2>Mid-Range Gaming PC</h2>
-            <ul>
-                <li>CPU: Ryzen 5 5600X</li>
-                <li>GPU: RTX 3060</li>
-                <li>RAM: 32GB DDR4</li>
-                <li>Storage: 1TB NVMe SSD</li>
-            </ul>
-            <div class="price">PKR 285,000</div>
-            <button>Buy Now</button>
-        </div>
+<div class="pc-card">
+    <img src="https://benchmarktechnomate.in/wp-content/uploads/2024/11/DALL%C2%B7E-2024-11-11-23.16.41-Wide-angle-view-of-a-home-studio-setup-for-creators-featuring-a-desk-with-a-large-monitor-a-microphone-on-a-boom-arm-a-camera-on-a-tripod-and-stud-1024x585.webp" alt="Content Creator PC">
+    <h2>Content Creator PC</h2>
+    <ul>
+        <li>CPU: Ryzen 7 5800X</li>
+        <li>GPU: RTX 3070</li>
+        <li>RAM: 32GB DDR4</li>
+        <li>Storage: 1TB NVMe SSD</li>
+    </ul>
+    <div class="price">PKR 345,000</div>
+    <button>Buy Now</button>
+</div>
 
-        <div class="pc-card">
-            <img src="assets/images/highend-1.jpg" alt="High End Gaming PC">
-            <h2>High-End Gaming PC</h2>
-            <ul>
-                <li>CPU: Ryzen 7 7800X3D</li>
-                <li>GPU: RTX 4080</li>
-                <li>RAM: 32GB DDR5</li>
-                <li>Storage: 2TB NVMe SSD</li>
-            </ul>
-            <div class="price">PKR 650,000</div>
-            <button>Buy Now</button>
-        </div>
+<div class="pc-card">
+    <img src="https://preview.redd.it/my-white-gaming-pc-dream-build-2024-v0-1i8rwmie82jd1.jpg?width=640&crop=smart&auto=webp&s=c5a79f5ea41f9e50a255d24d75aaf31e69401cc0" alt="White RGB PC">
+    <h2>White RGB PC</h2>
+    <ul>
+        <li>CPU: Ryzen 5 5600</li>
+        <li>GPU: RTX 3060 Ti</li>
+        <li>RAM: 16GB DDR4 RGB</li>
+        <li>Storage: 1TB SSD</li>
+    </ul>
+    <div class="price">PKR 310,000</div>
+    <button>Buy Now</button>
+</div>
+
+<div class="pc-card">
+    <img src="https://m.media-amazon.com/images/I/61H4MIFpNqL.jpg" alt="Compact Gaming PC">
+    <h2>Compact Gaming PC</h2>
+    <ul>
+        <li>CPU: Intel i5 13400</li>
+        <li>GPU: RTX 3050</li>
+        <li>RAM: 16GB DDR4</li>
+        <li>Storage: 512GB NVMe</li>
+    </ul>
+    <div class="price">PKR 240,000</div>
+    <button>Buy Now</button>
+</div>
+
+<div class="pc-card">
+    <img src="https://www.overclockers.co.uk/blog/wp-content/uploads/2021/12/blog-banner.jpg" alt="Streaming PC">
+    <h2>Streaming PC</h2>
+    <ul>
+        <li>CPU: Ryzen 9 5900X</li>
+        <li>GPU: RTX 3080</li>
+        <li>RAM: 32GB DDR4</li>
+        <li>Storage: 2TB NVMe SSD</li>
+    </ul>
+    <div class="price">PKR 420,000</div>
+    <button>Buy Now</button>
+</div>
+
+<div class="pc-card">
+    <img src="https://i5.walmartimages.com/seo/Velztorm-Lux-Lyte-Custom-Built-Gaming-Desktop-PC-AMD-Ryzen-9-5900X-12-Core-GeForce-RTX-3090-16GB-RAM-512GB-PCIe-SSD-2TB-HDD-3-5-Wifi-USB-3-2-HDMI-Blu_22cac2fd-07a3-49ff-9500-8d1648baea16.58edfd68f672a5c74405ebf3c370cff1.jpeg?odnHeight=768&odnWidth=768&odnBg=FFFFFF" alt="Extreme Gaming PC">
+    <h2>Extreme Gaming PC</h2>
+    <ul>
+        <li>CPU: Intel i9 14900K</li>
+        <li>GPU: RTX 4090</li>
+        <li>RAM: 64GB DDR5</li>
+        <li>Storage: 4TB NVMe SSD</li>
+    </ul>
+    <div class="price">PKR 1,050,000</div>
+    <button>Buy Now</button>
+</div>
 
     </section>
 
