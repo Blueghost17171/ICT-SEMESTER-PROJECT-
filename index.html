@@ -21,17 +21,6 @@
         align-items: center;
         }
         
-    
-        .brand-name h1 {
-           color: white;
-            font-size: 2rem;
-            font-weight: 900;
-            margin: 0px 50px;
-            font-style: italic;
-            cursor: pointer;
-            /* SIMPLE GLOW EFFECT */
-            text-shadow: 0 0 10px #8800ff;
-         }
         nav
         {
         display: flex;
@@ -44,6 +33,18 @@
         overflow: hidden;
         padding: 10px 0;
         margin: 0px;
+        }
+        
+    
+        .brand-name h1 {
+            color: white;
+            margin: 0px 50px;
+            font-size: 2rem; /* Larger logo size */
+            font-weight: 900; /* Extra Thick */
+            font-style: italic; /* Slanted for speed (Velox means Speed) */
+            letter-spacing: 1px;
+            cursor: pointer;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3); /* Subtle shine */
         }
         .nav-links
         {
@@ -120,6 +121,10 @@
             background: rgba(255, 255, 255, 0.1);
             margin-top: 40px;
         }
+        ul
+        {
+            list-style-type: none; /* Removes the bullet points */
+        }
         .card-grid
         {
             margin-top: 20px;
@@ -152,6 +157,9 @@
             padding: 15px;
             color: white;
         }
+        .card a{
+            text-decoration: none;
+        }
         .card h3 {
             color: #8800ff; 
             margin-top: 0;
@@ -183,27 +191,30 @@
         </p>
 
         <div class="card-grid">
+            
             <div class="card">
-                <a href="prebuilt.html"></a>
-                <img src="/assets/images/prebuilt_pc.png" alt="Prebuilt PC" class="card-image">
+                <a href="prebuilt.html">
+                <img src="https://ict-semester-project.vercel.app/assets/images/prebuilt_pc.png" alt="Prebuilt PC" class="card-image">
                 <div class="card-text">
                     <h3>Pre-Built PCs</h3>
                     <p>Don't want to wait? Grab a system that is tested, benchmarked, and ready to ship within 24 hours.</p>
                 </div>
+                </a>
             </div>
 
             <div class="card">
-                <a href="custom.html"></a>
-                <img src="/assets/images/custom_pc.png" alt="Custom PC" class="card-image">
+                <a href="custom.html">
+                <img src="https://ict-semester-project.vercel.app/assets/images/custom_pc.png" alt="Custom PC" class="card-image">
                 <div class="card-text">
                     <h3>Custom PCs</h3>
                     <p>You pick the parts, we build the beast. Choose from thousands of components to create your dream rig.</p>
                 </div>
             </div>
+            </a>
         </div>
     </div>
     <footer>
-        &copy; 2025 VELOX. All Rights Reserved. <br>
+        &copy; 2025 VELOX SYSTEMS. All Rights Reserved. <br>
     </footer>
 </body>
 </html>
