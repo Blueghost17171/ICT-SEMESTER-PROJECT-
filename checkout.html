@@ -153,11 +153,12 @@ textarea:focus {
 }
 	</style>
 </head>
+
 <body>
 	<div class="container">
 		<div class="header">
 			<div>
-				<h1>Velox Shop — Checkout</h1>
+				<h1>Velox Systems — Checkout</h1>
 				<p class="lead">High-performance gaming rigs, built-to-order</p>
 			</div>
 			<div class="muted">Order #PC-00123</div>
@@ -249,30 +250,79 @@ textarea:focus {
 			</main>
 
 			<aside class="card summary" aria-labelledby="summary-heading">
-				<h2 id="summary-heading" class="section-title">Order summary</h2>
-				<div class="item"><span>Gaming Desktop (RTX 4080)</span><span>$2,299.00</span></div>
-				<div class="item"><span>Mechanical Keyboard</span><span>$129.00</span></div>
-				<div class="item"><span>Shipping</span><span>$25.00</span></div>
-				<div class="total"><span>Total</span><span>$2,453.00</span></div>
-				<p class="muted" style="margin-top:12px">By placing this order you agree to our <a href="#">terms</a>.</p>
-			</aside>
+    <h2 id="summary-heading" class="section-title">Order summary</h2>
+    
+    <div class="item">
+        <span>Selected Gaming PC</span>
+        <span id="product-price">...</span>
+    </div>
+
+    <div class="item">
+		<span>Shipping</span>
+		<span>1200</span>
+	</div>
+    
+    <div class="total">
+        <span>Total</span>
+        <span id="order-total">...</span>
+    </div>
+    
+    <p class="muted" style="margin-top:12px">By placing this order you agree to our <a href="#">terms</a>.</p>
+</aside>
 		</div>
 	</div>
 
 	<script>
-		(function(){
-			var form = document.getElementById('checkout-form');
-			if(!form) return;
-			form.addEventListener('submit', function(e){
-				var fields = form.querySelectorAll('input,select,textarea');
-				for(var i=0;i<fields.length;i++){
-					var f = fields[i];
-					if(f.type==='button' || f.type==='submit') continue;
-					if(!f.value || f.value.trim()===''){ e.preventDefault(); alert('Please fill all fields before submitting.'); f.focus(); return; }
-				}
-			});
-		})();
-	</script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // --- 1. UPDATE PRICE IMMEDIATELY ---
+        // This runs as soon as the page loads
+        const storedPrice = localStorage.getItem('cartTotal');
+        const shippingCost = 1200;
+        
+        // This variable will hold the final string to show in the Alert
+        let finalAlertPrice = "PKR 0";
+
+        if (storedPrice) {
+            // Parse the price as a number so we can do math
+            let pcPrice = parseInt(storedPrice);
+            
+            // Add the shipping cost
+            let totalPrice = pcPrice + shippingCost;
+
+            // Update the HTML
+            const priceElement = document.getElementById('product-price');
+            const totalElement = document.getElementById('order-total');
+            
+            if(priceElement) priceElement.innerText = "PKR " + pcPrice.toLocaleString();
+            
+            // Format the total calculation for the display and the alert
+            finalAlertPrice = "PKR " + totalPrice.toLocaleString();
+            if(totalElement) totalElement.innerText = finalAlertPrice;
+        }
+
+        // --- 2. HANDLE FORM SUBMIT ---
+        var form = document.getElementById('checkout-form');
+        if(form) {
+            form.addEventListener('submit', function(e){
+                var fields = form.querySelectorAll('input,select,textarea');
+                for(var i=0;i<fields.length;i++){
+                    var f = fields[i];
+                    if(f.type==='button' || f.type==='submit') continue;
+                    
+                    // Simple validation check
+                    if(!f.value || f.value.trim()===''){ 
+                        e.preventDefault(); 
+                        alert('Please fill all fields before submitting.'); 
+                        f.focus(); 
+                        return; 
+                    }
+                }
+                // Optional: Show success message before submitting
+                alert("Order confirmed for " + finalAlertPrice);
+            });
+        }
+    });
+</script>
 </body>
 </html>
 
