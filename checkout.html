@@ -300,27 +300,25 @@ textarea:focus {
             if(totalElement) totalElement.innerText = finalAlertPrice;
         }
 
-        // --- 2. HANDLE FORM SUBMIT ---
-        var form = document.getElementById('checkout-form');
-        if(form) {
-            form.addEventListener('submit', function(e){
-                var fields = form.querySelectorAll('input,select,textarea');
-                for(var i=0;i<fields.length;i++){
-                    var f = fields[i];
-                    if(f.type==='button' || f.type==='submit') continue;
-                    
-                    // Simple validation check
-                    if(!f.value || f.value.trim()===''){ 
-                        e.preventDefault(); 
-                        alert('Please fill all fields before submitting.'); 
-                        f.focus(); 
-                        return; 
-                    }
+          // --- 2. HANDLE FORM SUBMIT ---
+          var form = document.getElementById('checkout-form');
+          if (form) {
+            form.addEventListener('submit', function(e) {
+              e.preventDefault();
+              var fields = form.querySelectorAll('input,select,textarea');
+              for (var i = 0; i < fields.length; i++) {
+                var f = fields[i];
+                if (f.type === 'button' || f.type === 'submit') continue;
+                if (!f.value || f.value.trim() === '') {
+                  alert('Please fill all fields before submitting.');
+                  f.focus();
+                  return; // stop and do not proceed
                 }
-                // Optional: Show success message before submitting
-                alert("Order confirmed for " + finalAlertPrice);
+              }
+              // all fields filled — go to thank you page
+              window.location.href = 'thankyou.html';
             });
-        }
+          }
     });
 </script>
 </body>
