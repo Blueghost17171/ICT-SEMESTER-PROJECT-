@@ -60,11 +60,28 @@
         letter-spacing: 2px;
         text-transform: uppercase; /* This forces the text to be UPPERCASE */
         }
-        .main-header { 
+        .main-header {
+            height: 425px;
+            background-image: linear-gradient(
+                rgba(0,0,0,0.65),
+                rgba(0,0,0,0.65)
+            ), url("https://www.shutterstock.com/image-photo/professional-gaming-pc-headset-computer-600nw-2505786561.jpg");
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-align: center;
-            margin: 40px 0 20px 0;
-            color: rgb(255, 255, 255);
-            font-size: 2em;
+            text-align: center;
+        }
+        .main-header h1{
+            font-weight: bold;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 40px;
+        }
+        .main-header p{
+            font-size: 18px;
             font-weight: bold;
         }
         .builder-container {
@@ -138,6 +155,10 @@
     </style>
 </head>
 <body>
+    <div class="main-header">
+        <h1>Build Your Custom PC</h1>
+        <br><p>Designed by you. Powered for everything</p>
+    </div>
      <nav>
         <div class="brand-name">
             <h1>VELOX</h1>
@@ -149,9 +170,6 @@
             <a href="login.html">Login</a>
         </div>
     </nav>
-    <div class="main-header">
-        Build Your Custom PC
-    </div>
     <div class="builder-container">
 
         <div class="component-group">
