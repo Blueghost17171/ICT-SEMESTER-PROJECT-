@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Order Confirmed — Thank You</title>
+  <style>
+    *{
+        box-sizing:border-box
+    }
+
+    body{
+      margin:0;
+      min-height:100vh;
+      font-family: Inter, system-ui, Arial, sans-serif;
+      background: linear-gradient(180deg,#05060a 0%,#0b0f14 100%);
+      color:#e9f1fb;
+      padding:36px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .card{
+      background:#0f1418;
+      border-radius:12px;
+      padding:28px;
+      box-shadow:0 8px 24px rgba(2,6,23,0.6);
+      max-width:560px;
+      text-align:center;
+    }
+
+    h1{
+      margin:0 0 8px;
+      font-size:1.5rem;
+      color:#1e90ff;
+    }
+
+    p{margin:0 0 16px;color:#9aa4b2}
+
+    .order-number{
+      background:rgba(255,255,255,0.02);
+      padding:8px 12px;
+      border-radius:8px;
+      display:inline-block;
+      font-weight:700;
+      color:#e9f1fb;
+      border:1px solid rgba(255,255,255,0.03);
+    }
+
+    .btn{
+      display:inline-block;
+      margin-top:12px;
+      padding:12px 16px;
+      background:#1e90ff;
+      color:#021222;
+      border-radius:10px;
+      text-decoration:none;
+      font-weight:700;
+    }
+
+    .btn:hover{filter:brightness(0.95)}
+
+    @media (max-width:880px){
+      body{padding:20px}
+      .card{width:100%}
+    }
+    
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Thank you — your order is placed!</h1>
+    <p>We appreciate your purchase. Your order is being processed and you'll receive a confirmation email shortly.</p>
+    <div class="order-number">Order #123456</div>
+    <p><a class="btn" href="index.html">Continue Shopping</a></p>
+  </div>
+</body>
+</html>

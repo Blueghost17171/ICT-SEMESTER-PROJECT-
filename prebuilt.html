@@ -196,7 +196,7 @@
         <li>Storage: 512GB SSD</li>
     </ul>
     <div class="price">PKR 160,000</div>
-    <button>Buy Now</button>
+    <button value = "160000" onclick="checkout(this)">Buy Now</button>
 </div>
 
 <div class="pc-card">
@@ -209,7 +209,7 @@
         <li>Storage: 1TB NVMe SSD</li>
     </ul>
     <div class="price">PKR 345,000</div>
-    <button>Buy Now</button>
+    <button value="345000" onclick="checkout(this)">Buy Now</button>
 </div>
 
 <div class="pc-card">
@@ -221,8 +221,8 @@
         <li>RAM: 16GB DDR4 RGB</li>
         <li>Storage: 1TB SSD</li>
     </ul>
-    <div class="price">PKR 310,000</div>
-    <button>Buy Now</button>
+    <div class="price" >PKR 310,000</div>
+    <button value="310000" onclick="checkout(this)">Buy Now</button>
 </div>
 
 <div class="pc-card">
@@ -234,8 +234,8 @@
         <li>RAM: 16GB DDR4</li>
         <li>Storage: 512GB NVMe</li>
     </ul>
-    <div class="price">PKR 240,000</div>
-    <button>Buy Now</button>
+    <div class="price" >PKR 240,000</div>
+    <button value="240000" onclick="checkout(this)">Buy Now</button>
 </div>
 
 <div class="pc-card">
@@ -247,8 +247,8 @@
         <li>RAM: 32GB DDR4</li>
         <li>Storage: 2TB NVMe SSD</li>
     </ul>
-    <div class="price">PKR 420,000</div>
-    <button>Buy Now</button>
+    <div class="price" >PKR 420,000</div>
+    <button value="420000" onclick="checkout(this)">Buy Now</button>
 </div>
 
 <div class="pc-card">
@@ -260,8 +260,8 @@
         <li>RAM: 64GB DDR5</li>
         <li>Storage: 4TB NVMe SSD</li>
     </ul>
-    <div class="price">PKR 1,050,000</div>
-    <button>Buy Now</button>
+    <div class="price" >PKR 1,050,000</div>
+    <button value="1050000" onclick="checkout(this)">Buy Now</button>
 </div>
 
     </section>
@@ -269,6 +269,11 @@
     <footer>
         &copy; 2025 VELOX. All Rights Reserved. <br>
     </footer>
-
+    <script>
+    function checkout(btn) {
+        localStorage.setItem('cartTotal', btn.value);
+        window.location.href = 'checkout.html';
+    }
+    </script>
 </body>
 </html>
