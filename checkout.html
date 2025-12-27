@@ -269,26 +269,28 @@ textarea:focus {
         // This runs as soon as the page loads
         const storedPrice = localStorage.getItem('cartTotal');
         const shippingCost = 1200;
-        
+
         // This variable will hold the final string to show in the Alert
         let finalAlertPrice = "PKR 0";
 
         if (storedPrice) {
-            // Parse the price as a number so we can do math
-            let pcPrice = parseInt(storedPrice);
-            
-            // Add the shipping cost
-            let totalPrice = pcPrice + shippingCost;
+          // storedPrice may include 'Rs', spaces or commas (e.g. "Rs. 12,345").
+          // Remove any non-digit characters before parsing.
+          const digitsOnly = storedPrice.replace(/[^\d]/g, '');
+          let pcPrice = parseInt(digitsOnly, 10) || 0;
 
-            // Update the HTML
-            const priceElement = document.getElementById('product-price');
-            const totalElement = document.getElementById('order-total');
-            
-            if(priceElement) priceElement.innerText = "PKR " + pcPrice.toLocaleString();
-            
-            // Format the total calculation for the display and the alert
-            finalAlertPrice = "PKR " + totalPrice.toLocaleString();
-            if(totalElement) totalElement.innerText = finalAlertPrice;
+          // Add the shipping cost
+          let totalPrice = pcPrice + shippingCost;
+
+          // Update the HTML
+          const priceElement = document.getElementById('product-price');
+          const totalElement = document.getElementById('order-total');
+
+          if (priceElement) priceElement.innerText = "PKR " + pcPrice.toLocaleString();
+
+          // Format the total calculation for the display and the alert
+          finalAlertPrice = "PKR " + totalPrice.toLocaleString();
+          if (totalElement) totalElement.innerText = finalAlertPrice;
         }
 
           // --- 2. HANDLE FORM SUBMIT ---
